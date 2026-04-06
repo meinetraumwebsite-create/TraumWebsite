@@ -1,5 +1,5 @@
 /* ========================================
-   TraumWeb — Main JavaScript
+   TraumWebsite — Main JavaScript
    ======================================== */
 
 // --- Translations ---
@@ -68,7 +68,7 @@ const translations = {
     // Testimonials
     'testimonials.label': 'Testimonials',
     'testimonials.title': 'What My Clients <span class="highlight">Say</span>',
-    'testimonials.t1.text': '"Working with TraumWeb was a game-changer for our business. Our new landing page generated more leads in one month than our old website did in six. Professional, fast, and incredibly talented."',
+    'testimonials.t1.text': '"Working with TraumWebsite was a game-changer for our business. Our new landing page generated more leads in one month than our old website did in six. Professional, fast, and incredibly talented."',
     'testimonials.t1.role': 'Founder, Bloom Botanics',
     'testimonials.t2.text': '"I was skeptical about investing in a new website, but the results speak for themselves. Our online reservations increased by 80% within weeks. Best investment we\'ve made this year."',
     'testimonials.t2.role': 'Owner, Bella Vista Restaurant',
@@ -116,13 +116,16 @@ const translations = {
     'contact.form.budget': 'Budget Range',
     'contact.form.message': 'Tell me about your project...',
     'contact.form.submit': 'Send Message',
+    'contact.form.sending': 'Sending...',
+    'contact.form.success': 'Thanks! Your message has been sent successfully.',
+    'contact.form.error': 'Something went wrong. Please try again.',
 
     // Footer
     'footer.tagline': 'Design. Convert. Grow.',
     'footer.nav': 'Navigation',
     'footer.services': 'Services',
     'footer.connect': 'Connect',
-    'footer.copy': '&copy; 2026 TraumWeb. All rights reserved.',
+    'footer.copy': '&copy; 2026 TraumWebsite. All rights reserved.',
     'footer.privacy': 'Privacy Policy',
 
     // Legal pages
@@ -197,7 +200,7 @@ const translations = {
     // Testimonials
     'testimonials.label': 'Kundenstimmen',
     'testimonials.title': 'Was meine Kunden <span class="highlight">sagen</span>',
-    'testimonials.t1.text': '„Die Zusammenarbeit mit TraumWeb war ein Gamechanger für unser Geschäft. Unsere neue Landingpage hat in einem Monat mehr Leads generiert als unsere alte Website in sechs. Professionell, schnell und unglaublich talentiert."',
+    'testimonials.t1.text': '„Die Zusammenarbeit mit TraumWebsite war ein Gamechanger für unser Geschäft. Unsere neue Landingpage hat in einem Monat mehr Leads generiert als unsere alte Website in sechs. Professionell, schnell und unglaublich talentiert."',
     'testimonials.t1.role': 'Gründerin, Bloom Botanics',
     'testimonials.t2.text': '„Ich war skeptisch, in eine neue Website zu investieren, aber die Ergebnisse sprechen für sich. Unsere Online-Reservierungen stiegen innerhalb von Wochen um 80%. Die beste Investition, die wir dieses Jahr getätigt haben."',
     'testimonials.t2.role': 'Inhaber, Bella Vista Restaurant',
@@ -245,13 +248,16 @@ const translations = {
     'contact.form.budget': 'Budgetrahmen',
     'contact.form.message': 'Erzählen Sie mir von Ihrem Projekt...',
     'contact.form.submit': 'Nachricht senden',
+    'contact.form.sending': 'Wird gesendet...',
+    'contact.form.success': 'Danke! Ihre Nachricht wurde erfolgreich gesendet.',
+    'contact.form.error': 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.',
 
     // Footer
     'footer.tagline': 'Design. Konvertierung. Wachstum.',
     'footer.nav': 'Navigation',
     'footer.services': 'Leistungen',
     'footer.connect': 'Kontakt',
-    'footer.copy': '&copy; 2026 TraumWeb. Alle Rechte vorbehalten.',
+    'footer.copy': '&copy; 2026 TraumWebsite. Alle Rechte vorbehalten.',
     'footer.privacy': 'Datenschutzerklärung',
 
     // Legal pages
@@ -319,8 +325,8 @@ function setLanguage(lang) {
 
   // Update page title
   document.title = lang === 'de'
-    ? 'TraumWeb — Webdesign & Conversion-Optimierung'
-    : 'TraumWeb — Web Design & Conversion Optimization';
+    ? 'TraumWebsite — Webdesign & Conversion-Optimierung'
+    : 'TraumWebsite — Web Design & Conversion Optimization';
 }
 
 // Set initial toggle state based on page language
@@ -424,28 +430,62 @@ document.querySelectorAll('.faq-item__question').forEach(button => {
 });
 
 
-// --- Contact Form ---
+// --- Contact Form (Formspree AJAX) ---
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  const submitBtn = document.getElementById('formSubmitBtn');
+  const successMsg = document.getElementById('formSuccess');
+  const errorMsg = document.getElementById('formError');
+  const emailField = document.getElementById('emailField');
+  const replyToField = document.getElementById('replyToField');
+
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const form = e.target;
-    const submitBtn = form.querySelector('button[type="submit"]');
+    // Copy email value into the hidden _replyto field
+    replyToField.value = emailField.value;
+
+    // Store original button text and show loading state
     const originalText = submitBtn.textContent;
-
-    // Simple feedback
-    submitBtn.textContent = currentLang === 'de' ? 'Gesendet!' : 'Sent!';
-    submitBtn.style.background = '#22c55e';
-    submitBtn.style.borderColor = '#22c55e';
+    submitBtn.textContent = translations[currentLang]['contact.form.sending'];
     submitBtn.disabled = true;
+    submitBtn.classList.add('btn--loading');
 
-    setTimeout(() => {
-      submitBtn.textContent = originalText;
-      submitBtn.style.background = '';
-      submitBtn.style.borderColor = '';
-      submitBtn.disabled = false;
-      form.reset();
-    }, 3000);
+    // Hide any previous messages
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        // Success
+        contactForm.reset();
+        successMsg.style.display = 'flex';
+        errorMsg.style.display = 'none';
+
+        // Auto-hide success message after 8 seconds
+        setTimeout(() => {
+          successMsg.style.display = 'none';
+        }, 8000);
+      } else {
+        // Server returned an error
+        errorMsg.style.display = 'flex';
+        successMsg.style.display = 'none';
+      }
+    } catch (err) {
+      // Network or fetch error
+      errorMsg.style.display = 'flex';
+      successMsg.style.display = 'none';
+    }
+
+    // Restore button state
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('btn--loading');
   });
 }

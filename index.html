@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TraumWeb — Web Design & Conversion Optimization</title>
+  <title>TraumWebsite — Web Design & Conversion Optimization</title>
   <meta name="description" content="I design high-converting websites and landing pages for businesses that want real results. Web design, conversion optimization, and copywriting.">
-  <meta name="author" content="TraumWeb">
-  <meta property="og:title" content="TraumWeb — Web Design & Conversion Optimization">
+  <meta name="author" content="TraumWebsite">
+  <meta property="og:title" content="TraumWebsite — Web Design & Conversion Optimization">
   <meta property="og:description" content="High-converting websites and landing pages for businesses that demand results.">
   <meta property="og:type" content="website">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
@@ -20,7 +20,7 @@
   <!-- Navigation -->
   <nav class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="#" class="nav__logo">Traum<span>Web</span></a>
+      <a href="#" class="nav__logo">Traum<span>Website</span></a>
       <ul class="nav__links" id="navLinks">
         <li><a href="#services" data-i18n="nav.services">Services</a></li>
         <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
@@ -215,7 +215,7 @@
         <div class="testimonials__grid">
           <div class="testimonial-card reveal">
             <div class="testimonial-card__stars">★★★★★</div>
-            <p class="testimonial-card__text" data-i18n="testimonials.t1.text">"Working with TraumWeb was a game-changer for our business. Our new landing page generated more leads in one month than our old website did in six. Professional, fast, and incredibly talented."</p>
+            <p class="testimonial-card__text" data-i18n="testimonials.t1.text">"Working with TraumWebsite was a game-changer for our business. Our new landing page generated more leads in one month than our old website did in six. Professional, fast, and incredibly talented."</p>
             <div class="testimonial-card__author">
               <div class="testimonial-card__avatar">SM</div>
               <div>
@@ -317,7 +317,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               <div>
                 <span class="contact__info-label" data-i18n="contact.email.label">Email</span>
-                <a href="mailto:hello@traumweb.com" class="contact__info-value">hello@traumweb.com</a>
+                <a href="mailto:info@traumwebsite.com" class="contact__info-value">info@traumwebsite.com</a>
               </div>
             </div>
             <div class="contact__info-item">
@@ -339,12 +339,14 @@
               <span data-i18n="contact.availability">Currently accepting new projects</span>
             </div>
           </div>
-          <form class="contact__form reveal" id="contactForm" action="#" method="POST">
+          <form class="contact__form reveal" id="contactForm" action="https://formspree.io/f/xaqlazky" method="POST">
+            <input type="hidden" name="_subject" value="New inquiry from traumwebsite.com">
+            <input type="hidden" name="_replyto" id="replyToField">
             <div class="form-group">
               <input type="text" name="name" required data-i18n-placeholder="contact.form.name" placeholder="Your Name">
             </div>
             <div class="form-group">
-              <input type="email" name="email" required data-i18n-placeholder="contact.form.email" placeholder="Your Email">
+              <input type="email" name="email" id="emailField" required data-i18n-placeholder="contact.form.email" placeholder="Your Email">
             </div>
             <div class="form-row">
               <div class="form-group">
@@ -369,7 +371,15 @@
             <div class="form-group">
               <textarea name="message" rows="5" required data-i18n-placeholder="contact.form.message" placeholder="Tell me about your project..."></textarea>
             </div>
-            <button type="submit" class="btn btn--primary btn--large btn--full" data-i18n="contact.form.submit">Send Message</button>
+            <button type="submit" class="btn btn--primary btn--large btn--full" id="formSubmitBtn" data-i18n="contact.form.submit">Send Message</button>
+            <div class="form-message form-message--success" id="formSuccess" style="display: none;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span data-i18n="contact.form.success">Thanks! Your message has been sent successfully.</span>
+            </div>
+            <div class="form-message form-message--error" id="formError" style="display: none;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              <span data-i18n="contact.form.error">Something went wrong. Please try again.</span>
+            </div>
           </form>
         </div>
       </div>
@@ -382,7 +392,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a href="#" class="nav__logo">Traum<span>Web</span></a>
+          <a href="#" class="nav__logo">Traum<span>Website</span></a>
           <p class="footer__tagline" data-i18n="footer.tagline">Design. Convert. Grow.</p>
         </div>
         <div class="footer__col">
@@ -406,13 +416,13 @@
         <div class="footer__col">
           <h4 class="footer__heading" data-i18n="footer.connect">Connect</h4>
           <ul class="footer__links">
-            <li><a href="mailto:hello@traumweb.com">hello@traumweb.com</a></li>
+            <li><a href="mailto:info@traumwebsite.com">info@traumwebsite.com</a></li>
             <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
-        <p data-i18n-html="footer.copy">&copy; 2026 TraumWeb. All rights reserved.</p>
+        <p data-i18n-html="footer.copy">&copy; 2026 TraumWebsite. All rights reserved.</p>
         <div class="footer__legal">
           <a href="impressum.html">Impressum</a>
           <span class="footer__legal-sep">|</span>
