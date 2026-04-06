@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TraumWeb — Web Design & Conversion Optimization</title>
+  <meta name="description" content="I design high-converting websites and landing pages for businesses that want real results. Web design, conversion optimization, and copywriting.">
+  <meta name="author" content="TraumWeb">
+  <meta property="og:title" content="TraumWeb — Web Design & Conversion Optimization">
+  <meta property="og:description" content="High-converting websites and landing pages for businesses that demand results.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">Traum<span>Web</span></a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+        <li><a href="#why" data-i18n="nav.why">Why Me</a></li>
+        <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
+        <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav__right">
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+          <span class="lang-toggle__option active" data-lang="en">EN</span>
+          <span class="lang-toggle__option" data-lang="de">DE</span>
+          <span class="lang-toggle__slider"></span>
+        </button>
+        <a href="#contact" class="btn btn--small btn--primary nav__cta" data-i18n="nav.cta">Book a Call</a>
+        <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="badge reveal" data-i18n="hero.badge">Freelance Web Designer & Conversion Specialist</span>
+          <h1 class="hero__title reveal" data-i18n-html="hero.title">Websites That <span class="highlight">Convert</span> Visitors Into Customers</h1>
+          <p class="hero__sub reveal" data-i18n="hero.sub">I design and build high-performing landing pages, websites, and conversion strategies that turn your traffic into revenue. No templates. No guesswork. Just results.</p>
+          <div class="hero__buttons reveal">
+            <a href="#contact" class="btn btn--primary btn--large" data-i18n="hero.cta">Start Your Project</a>
+            <a href="#portfolio" class="btn btn--outline btn--large" data-i18n="hero.cta2">See My Work</a>
+          </div>
+        </div>
+        <div class="hero__stats reveal">
+          <div class="stat">
+            <span class="stat__number">50+</span>
+            <span class="stat__label" data-i18n="hero.stat1">Projects Delivered</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">97%</span>
+            <span class="stat__label" data-i18n="hero.stat2">Client Satisfaction</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">3x</span>
+            <span class="stat__label" data-i18n="hero.stat3">Avg. ROI Increase</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">&lt;48h</span>
+            <span class="stat__label" data-i18n="hero.stat4">Response Time</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__bg"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+      <div class="container">
+        <span class="section__label reveal" data-i18n="services.label">What I Do</span>
+        <h2 class="section__title reveal" data-i18n-html="services.title">Services That <span class="highlight">Drive Growth</span></h2>
+        <p class="section__sub reveal" data-i18n="services.sub">Every service is designed with one goal in mind: growing your business. Here's how I can help.</p>
+        <div class="services__grid">
+          <div class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="2" y1="7" x2="22" y2="7"/><path d="M12 11v3m0 0l-2-2m2 2l2-2"/></svg>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.s1.title">Landing Pages</h3>
+            <p class="service-card__text" data-i18n="services.s1.text">Custom-built landing pages engineered for one goal: converting your visitors into leads and customers. Every element is strategically placed to drive action.</p>
+          </div>
+          <div class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.s2.title">Website Design</h3>
+            <p class="service-card__text" data-i18n="services.s2.text">Stunning, professional websites that don't just look good — they work. Built with clean code, fast loading times, and your business goals in mind.</p>
+          </div>
+          <div class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.s3.title">Conversion Optimization</h3>
+            <p class="service-card__text" data-i18n="services.s3.text">Already have traffic but not enough sales? I analyze your funnel, identify friction points, and implement proven strategies to boost your conversion rate.</p>
+          </div>
+          <div class="service-card reveal">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <h3 class="service-card__title" data-i18n="services.s4.title">Copywriting</h3>
+            <p class="service-card__text" data-i18n="services.s4.text">Words sell. I craft compelling, conversion-focused copy that speaks directly to your audience's pain points and moves them to take action.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section section--alt" id="portfolio">
+      <div class="container">
+        <span class="section__label reveal" data-i18n="portfolio.label">My Work</span>
+        <h2 class="section__title reveal" data-i18n-html="portfolio.title">Selected <span class="highlight">Projects</span></h2>
+        <p class="section__sub reveal" data-i18n="portfolio.sub">Real results for real businesses. Here are some of my recent projects.</p>
+        <div class="portfolio__grid">
+          <div class="portfolio-card reveal">
+            <div class="portfolio-card__image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+              <span class="portfolio-card__badge" data-i18n="portfolio.p1.badge">E-Commerce</span>
+            </div>
+            <div class="portfolio-card__body">
+              <h3 class="portfolio-card__title">Bloom Botanics</h3>
+              <p class="portfolio-card__text" data-i18n="portfolio.p1.text">Complete website overhaul for an organic skincare brand. New design and optimized copy increased online sales by 47% within the first 60 days.</p>
+              <div class="portfolio-card__metric">
+                <span class="portfolio-card__metric-number">+47%</span>
+                <span class="portfolio-card__metric-label" data-i18n="portfolio.p1.metric">Sales Increase</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card reveal">
+            <div class="portfolio-card__image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+              <span class="portfolio-card__badge" data-i18n="portfolio.p2.badge">Landing Page</span>
+            </div>
+            <div class="portfolio-card__body">
+              <h3 class="portfolio-card__title">FitSpace</h3>
+              <p class="portfolio-card__text" data-i18n="portfolio.p2.text">High-converting landing page for a fitness studio chain. Generated 340+ qualified leads in the first month of launch through strategic design and copy.</p>
+              <div class="portfolio-card__metric">
+                <span class="portfolio-card__metric-number">340+</span>
+                <span class="portfolio-card__metric-label" data-i18n="portfolio.p2.metric">Leads in 30 Days</span>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card reveal">
+            <div class="portfolio-card__image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+              <span class="portfolio-card__badge" data-i18n="portfolio.p3.badge">Corporate Website</span>
+            </div>
+            <div class="portfolio-card__body">
+              <h3 class="portfolio-card__title">NovaTech Solutions</h3>
+              <p class="portfolio-card__text" data-i18n="portfolio.p3.text">Modern corporate website for a SaaS startup. Reduced bounce rate by 35% and increased demo requests by 62% with improved UX and messaging.</p>
+              <div class="portfolio-card__metric">
+                <span class="portfolio-card__metric-number">+62%</span>
+                <span class="portfolio-card__metric-label" data-i18n="portfolio.p3.metric">More Demo Requests</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Me Section -->
+    <section class="section" id="why">
+      <div class="container">
+        <span class="section__label reveal" data-i18n="why.label">Why Me</span>
+        <h2 class="section__title reveal" data-i18n-html="why.title">Why Businesses <span class="highlight">Choose Me</span></h2>
+        <p class="section__sub reveal" data-i18n="why.sub">I don't just build websites — I build growth engines. Here's what sets me apart.</p>
+        <div class="why__grid">
+          <div class="why-card reveal">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <h3 class="why-card__title" data-i18n="why.w1.title">Conversion-First Approach</h3>
+            <p class="why-card__text" data-i18n="why.w1.text">Every design decision is backed by proven conversion principles. Your website won't just look good — it will perform.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3 class="why-card__title" data-i18n="why.w2.title">Fast Delivery</h3>
+            <p class="why-card__text" data-i18n="why.w2.text">No endless timelines. I deliver quality work within agreed-upon deadlines, every single time. Your project won't get stuck in limbo.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <h3 class="why-card__title" data-i18n="why.w3.title">Clear Communication</h3>
+            <p class="why-card__text" data-i18n="why.w3.text">You'll always know where your project stands. Regular updates, quick responses, and zero surprises from start to finish.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <h3 class="why-card__title" data-i18n="why.w4.title">Measurable Results</h3>
+            <p class="why-card__text" data-i18n="why.w4.text">I don't just build websites — I build business growth tools that deliver ROI you can measure. Data drives every decision.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section section--alt" id="testimonials">
+      <div class="container">
+        <span class="section__label reveal" data-i18n="testimonials.label">Testimonials</span>
+        <h2 class="section__title reveal" data-i18n-html="testimonials.title">What My Clients <span class="highlight">Say</span></h2>
+        <div class="testimonials__grid">
+          <div class="testimonial-card reveal">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text" data-i18n="testimonials.t1.text">"Working with TraumWeb was a game-changer for our business. Our new landing page generated more leads in one month than our old website did in six. Professional, fast, and incredibly talented."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">SM</div>
+              <div>
+                <span class="testimonial-card__name">Sarah Mitchell</span>
+                <span class="testimonial-card__role" data-i18n="testimonials.t1.role">Founder, Bloom Botanics</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text" data-i18n="testimonials.t2.text">"I was skeptical about investing in a new website, but the results speak for themselves. Our online reservations increased by 80% within weeks. Best investment we've made this year."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">TK</div>
+              <div>
+                <span class="testimonial-card__name">Thomas Krüger</span>
+                <span class="testimonial-card__role" data-i18n="testimonials.t2.role">Owner, Bella Vista Restaurant</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card reveal">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__text" data-i18n="testimonials.t3.text">"The attention to detail is remarkable. Every element on our page has a purpose, and it shows in our numbers. Our conversion rate nearly doubled after the redesign. Highly recommended."</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">LC</div>
+              <div>
+                <span class="testimonial-card__name">Lisa Chen</span>
+                <span class="testimonial-card__role" data-i18n="testimonials.t3.role">CEO, FitSpace</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+      <div class="container container--narrow">
+        <span class="section__label reveal" data-i18n="faq.label">FAQ</span>
+        <h2 class="section__title reveal" data-i18n-html="faq.title">Frequently Asked <span class="highlight">Questions</span></h2>
+        <div class="faq__list">
+          <div class="faq-item reveal">
+            <button class="faq-item__question" data-i18n="faq.q1.q">What does your process look like?</button>
+            <div class="faq-item__answer">
+              <p data-i18n="faq.q1.a">Every project starts with a strategy call where I learn about your business, goals, and target audience. From there, I create a detailed plan, design the solution, and refine it based on your feedback. You're involved at every stage — no surprises.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__question" data-i18n="faq.q2.q">How long does a typical project take?</button>
+            <div class="faq-item__answer">
+              <p data-i18n="faq.q2.a">Most landing pages are delivered within 5–7 business days. Full website projects typically take 2–4 weeks depending on scope and complexity. I'll give you a clear timeline upfront during our initial call.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__question" data-i18n="faq.q3.q">What are your rates?</button>
+            <div class="faq-item__answer">
+              <p data-i18n="faq.q3.a">Pricing depends on the scope and complexity of your project. Landing pages start at €497, and full website projects start at €1,497. Book a free consultation to get a custom quote tailored to your needs.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__question" data-i18n="faq.q4.q">How many revisions are included?</button>
+            <div class="faq-item__answer">
+              <p data-i18n="faq.q4.a">Every project includes 2 rounds of revisions at no extra cost. I work closely with you throughout the process to ensure the final result matches your vision — most clients are thrilled after the first draft.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__question" data-i18n="faq.q5.q">Can you work with my existing website?</button>
+            <div class="faq-item__answer">
+              <p data-i18n="faq.q5.a">Absolutely. Whether you need a redesign, conversion optimization, or updated content — I can work with what you have and make it perform significantly better. No need to start from scratch.</p>
+            </div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-item__question" data-i18n="faq.q6.q">Do you offer ongoing support after launch?</button>
+            <div class="faq-item__answer">
+              <p data-i18n="faq.q6.a">Yes! I offer optional monthly maintenance and optimization packages. After launch, I can handle updates, monitor performance, and continuously improve your conversion rates so your site keeps delivering results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta-section" id="cta-final">
+      <div class="container cta-section__inner">
+        <h2 class="cta-section__title reveal" data-i18n-html="cta.title">Ready to Transform Your <span class="highlight">Online Presence</span>?</h2>
+        <p class="cta-section__text reveal" data-i18n="cta.text">Stop losing potential customers to a website that doesn't convert. Let's build something that actually grows your business.</p>
+        <a href="#contact" class="btn btn--primary btn--large reveal" data-i18n="cta.button">Get Your Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <span class="section__label reveal" data-i18n="contact.label">Get In Touch</span>
+        <h2 class="section__title reveal" data-i18n-html="contact.title">Let's Start Your <span class="highlight">Project</span></h2>
+        <p class="section__sub reveal" data-i18n="contact.sub">Tell me about your project, and I'll get back to you within 24 hours with a tailored plan.</p>
+        <div class="contact__grid">
+          <div class="contact__info reveal">
+            <div class="contact__info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <div>
+                <span class="contact__info-label" data-i18n="contact.email.label">Email</span>
+                <a href="mailto:hello@traumweb.com" class="contact__info-value">hello@traumweb.com</a>
+              </div>
+            </div>
+            <div class="contact__info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <span class="contact__info-label" data-i18n="contact.location.label">Location</span>
+                <span class="contact__info-value" data-i18n="contact.location.value">Remote — Worldwide</span>
+              </div>
+            </div>
+            <div class="contact__info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div>
+                <span class="contact__info-label" data-i18n="contact.response.label">Response Time</span>
+                <span class="contact__info-value" data-i18n="contact.response.value">Within 24 hours</span>
+              </div>
+            </div>
+            <div class="contact__availability">
+              <span class="contact__availability-dot"></span>
+              <span data-i18n="contact.availability">Currently accepting new projects</span>
+            </div>
+          </div>
+          <form class="contact__form reveal" id="contactForm" action="#" method="POST">
+            <div class="form-group">
+              <input type="text" name="name" required data-i18n-placeholder="contact.form.name" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" required data-i18n-placeholder="contact.form.email" placeholder="Your Email">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <select name="service" required id="serviceSelect">
+                  <option value="" disabled selected data-i18n="contact.form.service">Select a Service</option>
+                  <option value="landing" data-i18n="contact.form.service1">Landing Page</option>
+                  <option value="website" data-i18n="contact.form.service2">Website Design</option>
+                  <option value="conversion" data-i18n="contact.form.service3">Conversion Optimization</option>
+                  <option value="copy" data-i18n="contact.form.service4">Copywriting</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select name="budget" id="budgetSelect">
+                  <option value="" disabled selected data-i18n="contact.form.budget">Budget Range</option>
+                  <option value="500-1000">€500 – €1,000</option>
+                  <option value="1000-2500">€1,000 – €2,500</option>
+                  <option value="2500-5000">€2,500 – €5,000</option>
+                  <option value="5000+">€5,000+</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea name="message" rows="5" required data-i18n-placeholder="contact.form.message" placeholder="Tell me about your project..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--large btn--full" data-i18n="contact.form.submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo">Traum<span>Web</span></a>
+          <p class="footer__tagline" data-i18n="footer.tagline">Design. Convert. Grow.</p>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading" data-i18n="footer.nav">Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="#services" data-i18n="nav.services">Services</a></li>
+            <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+            <li><a href="#why" data-i18n="nav.why">Why Me</a></li>
+            <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading" data-i18n="footer.services">Services</h4>
+          <ul class="footer__links">
+            <li><a href="#services" data-i18n="services.s1.title">Landing Pages</a></li>
+            <li><a href="#services" data-i18n="services.s2.title">Website Design</a></li>
+            <li><a href="#services" data-i18n="services.s3.title">Conversion Optimization</a></li>
+            <li><a href="#services" data-i18n="services.s4.title">Copywriting</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading" data-i18n="footer.connect">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="mailto:hello@traumweb.com">hello@traumweb.com</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p data-i18n-html="footer.copy">&copy; 2026 TraumWeb. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
