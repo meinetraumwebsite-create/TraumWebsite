@@ -123,6 +123,14 @@ const translations = {
     'footer.services': 'Services',
     'footer.connect': 'Connect',
     'footer.copy': '&copy; 2026 TraumWeb. All rights reserved.',
+    'footer.privacy': 'Privacy Policy',
+
+    // Legal pages
+    'legal.back': 'Back to Homepage',
+    'legal.updated': 'Last updated: April 2026',
+    'impressum.sub': 'Information pursuant to §5 TMG',
+    'privacy.title': 'Privacy Policy',
+    'privacy.sub': 'Information on data protection pursuant to GDPR',
   },
 
   de: {
@@ -244,12 +252,20 @@ const translations = {
     'footer.services': 'Leistungen',
     'footer.connect': 'Kontakt',
     'footer.copy': '&copy; 2026 TraumWeb. Alle Rechte vorbehalten.',
+    'footer.privacy': 'Datenschutzerklärung',
+
+    // Legal pages
+    'legal.back': 'Zurück zur Startseite',
+    'legal.updated': 'Stand: April 2026',
+    'impressum.sub': 'Angaben gemäß §5 TMG',
+    'privacy.title': 'Datenschutzerklärung',
+    'privacy.sub': 'Informationen zum Datenschutz gemäß DSGVO',
   }
 };
 
 
 // --- State ---
-let currentLang = 'en';
+let currentLang = document.documentElement.lang || 'en';
 
 
 // --- Language Toggle ---
@@ -288,6 +304,11 @@ function setLanguage(lang) {
     opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
   });
 
+  // Toggle legal page content blocks (DE/EN full-text versions)
+  document.querySelectorAll('.legal-content[data-lang]').forEach(block => {
+    block.style.display = block.getAttribute('data-lang') === lang ? '' : 'none';
+  });
+
   // Update meta
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
@@ -302,7 +323,13 @@ function setLanguage(lang) {
     : 'TraumWeb — Web Design & Conversion Optimization';
 }
 
-document.getElementById('langToggle').addEventListener('click', (e) => {
+// Set initial toggle state based on page language
+const initToggle = document.getElementById('langToggle');
+if (currentLang === 'de') {
+  initToggle.setAttribute('data-active', 'de');
+}
+
+initToggle.addEventListener('click', (e) => {
   const option = e.target.closest('.lang-toggle__option');
   if (option) {
     const lang = option.getAttribute('data-lang');
@@ -398,24 +425,27 @@ document.querySelectorAll('.faq-item__question').forEach(button => {
 
 
 // --- Contact Form ---
-document.getElementById('contactForm').addEventListener('submit', (e) => {
-  e.preventDefault();
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-  const form = e.target;
-  const submitBtn = form.querySelector('button[type="submit"]');
-  const originalText = submitBtn.textContent;
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
 
-  // Simple feedback
-  submitBtn.textContent = currentLang === 'de' ? 'Gesendet!' : 'Sent!';
-  submitBtn.style.background = '#22c55e';
-  submitBtn.style.borderColor = '#22c55e';
-  submitBtn.disabled = true;
+    // Simple feedback
+    submitBtn.textContent = currentLang === 'de' ? 'Gesendet!' : 'Sent!';
+    submitBtn.style.background = '#22c55e';
+    submitBtn.style.borderColor = '#22c55e';
+    submitBtn.disabled = true;
 
-  setTimeout(() => {
-    submitBtn.textContent = originalText;
-    submitBtn.style.background = '';
-    submitBtn.style.borderColor = '';
-    submitBtn.disabled = false;
-    form.reset();
-  }, 3000);
-});
+    setTimeout(() => {
+      submitBtn.textContent = originalText;
+      submitBtn.style.background = '';
+      submitBtn.style.borderColor = '';
+      submitBtn.disabled = false;
+      form.reset();
+    }, 3000);
+  });
+}
